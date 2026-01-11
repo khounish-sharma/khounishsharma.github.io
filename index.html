@@ -9,11 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-bg: #faf9f7;
+            --color-bg: #F7F7F7;
             --color-text: #1a1a1a;
-            --color-text-muted: #666;
-            --color-accent: #8b4513;
-            --color-border: #e0ddd8;
+            --color-text-muted: #555555;
+            --color-accent: #B31B1B;
+            --color-accent-dark: #8a1515;
+            --color-orange-dark: #CF4520;
+            --color-orange-bright: #E7751D;
+            --color-yellow: #FFC72C;
+            --color-border: #DDDDDD;
+            --color-white: #FFFFFF;
             --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Source Sans 3', sans-serif;
         }
@@ -42,9 +47,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: var(--color-bg);
+            background: var(--color-accent);
             z-index: 100;
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-container {
@@ -60,7 +66,7 @@
             font-family: var(--font-display);
             font-size: 1.5rem;
             font-weight: 500;
-            color: var(--color-text);
+            color: var(--color-white);
             text-decoration: none;
             letter-spacing: 0.02em;
         }
@@ -73,7 +79,7 @@
 
         .nav-links a {
             font-size: 0.9rem;
-            color: var(--color-text-muted);
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
             letter-spacing: 0.05em;
             text-transform: uppercase;
@@ -82,7 +88,7 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--color-accent);
+            color: var(--color-yellow);
         }
 
         .mobile-menu {
@@ -96,7 +102,7 @@
         .mobile-menu span {
             width: 24px;
             height: 2px;
-            background: var(--color-text);
+            background: var(--color-white);
             transition: 0.3s;
         }
 
@@ -165,16 +171,30 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
-            color: var(--color-text);
+            color: var(--color-white);
             text-decoration: none;
             padding: 0.75rem 1.5rem;
-            border: 1px solid var(--color-border);
+            background: var(--color-accent);
+            border: none;
             transition: all 0.3s ease;
         }
 
         .hero-link:hover {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
+            background: var(--color-orange-dark);
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(179, 27, 27, 0.3);
+        }
+
+        .hero-link.secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 2px solid var(--color-accent);
+        }
+
+        .hero-link.secondary:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
         }
 
         .hero-image {
@@ -186,12 +206,13 @@
             width: 100%;
             max-width: 400px;
             aspect-ratio: 4/5;
-            background: linear-gradient(135deg, #e8e4df 0%, #d4cfc7 100%);
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-orange-dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--font-display);
             font-size: 1.2rem;
+            color: var(--color-white);
             color: var(--color-text-muted);
             font-style: italic;
         }
@@ -223,14 +244,28 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--color-text-muted);
+            color: var(--color-orange-dark);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .section-title {
             font-family: var(--font-display);
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-orange-bright));
         }
 
         /* Publications Section */
@@ -338,23 +373,27 @@
             padding: 2rem;
             background: white;
             border: 1px solid var(--color-border);
+            border-top: 4px solid var(--color-accent);
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
         }
 
         .press-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 40px rgba(179, 27, 27, 0.15);
+            border-top-color: var(--color-orange-dark);
         }
 
         .press-source {
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--color-accent);
+            color: var(--color-orange-dark);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .press-title {
@@ -433,15 +472,16 @@
 
         /* Contact Section */
         .contact-section {
-            background: white;
-            border: 1px solid var(--color-border);
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-orange-dark) 100%);
+            border: none;
             padding: 4rem;
             text-align: center;
+            color: var(--color-white);
         }
 
         .contact-description {
             font-size: 1.1rem;
-            color: var(--color-text-muted);
+            color: rgba(255,255,255,0.9);
             max-width: 600px;
             margin: 0 auto 2rem;
         }
@@ -458,23 +498,27 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
-            color: var(--color-text);
+            color: var(--color-white);
             text-decoration: none;
             padding: 0.75rem 1.5rem;
-            border: 1px solid var(--color-border);
+            border: 2px solid rgba(255,255,255,0.5);
             transition: all 0.3s ease;
+            background: transparent;
         }
 
         .contact-link:hover {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
+            border-color: var(--color-white);
+            background: rgba(255,255,255,0.1);
+            color: var(--color-white);
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid var(--color-border);
+            background: #1a1a1a;
+            border-top: none;
             padding: 4rem 2rem;
             text-align: center;
+            color: var(--color-white);
         }
 
         .footer-content {
@@ -486,6 +530,7 @@
             font-family: var(--font-display);
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            color: var(--color-white);
         }
 
         .footer-social {
@@ -497,19 +542,19 @@
         }
 
         .footer-social a {
-            color: var(--color-text-muted);
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
 
         .footer-social a:hover {
-            color: var(--color-accent);
+            color: var(--color-yellow);
         }
 
         .footer-copyright {
             font-size: 0.85rem;
-            color: var(--color-text-muted);
+            color: rgba(255,255,255,0.5);
         }
 
         /* Animations */
@@ -566,11 +611,12 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--color-bg);
+                background: var(--color-accent);
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
-                border-bottom: 1px solid var(--color-border);
+                border-bottom: none;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             }
 
             .nav-links.active {
@@ -635,7 +681,7 @@
                         </svg>
                         Google Scholar
                     </a>
-                    <a href="https://www.linkedin.com/in/khounish-sharma-00b689212/" class="hero-link" target="_blank">
+                    <a href="https://www.linkedin.com/in/khounish-sharma-00b689212/" class="hero-link secondary" target="_blank">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
@@ -798,6 +844,37 @@
                 <p style="margin-bottom: 1.5rem;">Working with researchers at Children's Hospital Los Angeles and USC, we investigated how tumor-derived extracellular vesicles (TEVs)—tiny membrane-bound packages released by cancer cells—travel through the bloodstream and prepare distant organs for metastasis. We used an innovative approach: engineering melanoma and neuroblastoma cells to release GFP-tagged vesicles that we could track in real-time.</p>
                 <p style="margin-bottom: 1.5rem;">Our key discovery was striking: these tumor vesicles arrive at future metastatic sites and are captured by resident immune cells <strong>before</strong> any tumor cells appear. This creates what scientists call a "pre-metastatic niche"—essentially preparing the soil before the seeds arrive.</p>
                 <p style="margin-bottom: 1.5rem;">Perhaps most importantly, we found this process is highly organ-specific. Vesicles from lung-metastasizing tumors were captured only in the lungs, while those from liver-metastasizing tumors targeted the liver. This organotropism suggests that understanding TEV biology could help us predict—and potentially prevent—where cancers will spread.</p>
+                
+                <!-- Key Takeaways Figure -->
+                <div style="background: linear-gradient(135deg, #fff5f5 0%, #fff0e8 100%); border: 2px solid var(--color-accent); border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B31B1B" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <h4 style="font-family: var(--font-display); font-size: 1.3rem; color: var(--color-accent); margin: 0;">Key Takeaways</h4>
+                    </div>
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background: linear-gradient(135deg, #B31B1B, #CF4520); color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">1</span>
+                            <p style="margin: 0;"><strong>Novel Tracking Method:</strong> GFP-tagged extracellular vesicles allow real-time tracking of tumor communication in living systems</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background: linear-gradient(135deg, #B31B1B, #CF4520); color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">2</span>
+                            <p style="margin: 0;"><strong>Pre-Metastatic Niche:</strong> Tumor vesicles arrive and are captured by immune cells before any tumor cells appear at distant sites</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background: linear-gradient(135deg, #B31B1B, #CF4520); color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">3</span>
+                            <p style="margin: 0;"><strong>Organ Specificity:</strong> Vesicle capture is highly organ-specific—only occurring in organs destined to become metastatic sites</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background: linear-gradient(135deg, #B31B1B, #CF4520); color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">4</span>
+                            <p style="margin: 0;"><strong>Predictive Potential:</strong> Understanding TEV biology could enable prediction and prevention of cancer spread</p>
+                        </div>
+                    </div>
+                </div>
+
                 <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/37194998/" target="_blank" style="color: var(--color-accent);">PubMed</a></p>
             </div>
         </div>
@@ -815,8 +892,37 @@
                 <p style="margin-bottom: 1.5rem;">This timing is crucial. The vesicles carry microRNA-1246, which we found transferred to host macrophages. This triggered dynamic changes in inflammatory gene expression, essentially "reprogramming" the local environment to become more hospitable to arriving tumor cells.</p>
                 <p style="margin-bottom: 1.5rem;">We observed that certain inflammatory genes were upregulated early in pre-metastatic niche formation but then declined as actual metastasis developed. Other pro-tumor genes emerged later. This suggests a complex, evolving dialogue between tumor vesicles and host tissues—one that might offer multiple windows for therapeutic intervention.</p>
                 <p style="margin-bottom: 1.5rem;">Understanding this timeline could be transformative for early detection strategies, potentially allowing us to identify metastatic risk before tumor cells even begin to spread.</p>
-            </div>
-        </div>
+                
+                <!-- Key Takeaways Figure -->
+                <div style="background: linear-gradient(135deg, #fff5f5 0%, #fff0e8 100%); border: 2px solid var(--color-accent); border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B31B1B" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <h4 style="font-family: var(--font-display); font-size: 1.3rem; color: var(--color-accent); margin: 0;">Timeline of Metastatic Preparation</h4>
+                    </div>
+                    <div style="position: relative; padding-left: 2rem; border-left: 3px solid var(--color-accent);">
+                        <div style="margin-bottom: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: -2.65rem; background: linear-gradient(135deg, #B31B1B, #CF4520); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Day 5</span>
+                            <p style="margin: 0; padding-left: 1rem;"><strong>Vesicles Detected in Blood</strong> — Tumor-derived vesicles containing miR-1246 appear in circulation</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: -2.65rem; background: linear-gradient(135deg, #CF4520, #E7751D); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Day 10</span>
+                            <p style="margin: 0; padding-left: 1rem;"><strong>Macrophage Capture</strong> — Lung macrophages capture vesicles; inflammatory gene changes begin</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: -2.65rem; background: linear-gradient(135deg, #E7751D, #FFC72C); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Day 15</span>
+                            <p style="margin: 0; padding-left: 1rem;"><strong>Niche Established</strong> — Pre-metastatic niche fully formed; first tumor cells begin arriving</p>
+                        </div>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: -2.65rem; background: linear-gradient(135deg, #B31B1B, #8a1515); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Day 25</span>
+                            <p style="margin: 0; padding-left: 1rem;"><strong>Metastasis Develops</strong> — Tumor cell colonization; shift to pro-tumorigenic gene expression</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/37194998/" target="_blank" style="color: var(--color-accent);">PubMed</a></p>
 
         <!-- Blog Post 3 -->
         <div id="blog-post-3" class="blog-full-post" style="display: none; background: white; border: 1px solid var(--color-border); padding: 3rem; margin-top: 2rem;">
@@ -830,7 +936,42 @@
                 <p style="margin-bottom: 1.5rem;"><strong>Therapeutic Windows:</strong> The inflammatory gene changes we observed in pre-metastatic niches suggest multiple potential intervention points. If we can block vesicle uptake or neutralize their cargo, we might prevent the "soil preparation" that makes metastasis possible.</p>
                 <p style="margin-bottom: 1.5rem;"><strong>Organ-Specific Targeting:</strong> Our finding that different tumor vesicles show distinct organ tropism—linked to specific integrin profiles—could help predict metastatic patterns. This might enable more targeted surveillance and prevention strategies.</p>
                 <p style="margin-bottom: 1.5rem;"><strong>Limitations to Address:</strong> Our studies used immunodeficient mice, which don't capture the full complexity of the immune response. Future work in immunocompetent models will be essential to translate these findings clinically.</p>
-                <p>This research represents an important step toward understanding—and ultimately preventing—cancer metastasis at its earliest stages.</p>
+                <p style="margin-bottom: 1.5rem;">This research represents an important step toward understanding—and ultimately preventing—cancer metastasis at its earliest stages.</p>
+                
+                <!-- Key Takeaways Figure -->
+                <div style="background: linear-gradient(135deg, #fff5f5 0%, #fff0e8 100%); border: 2px solid var(--color-accent); border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B31B1B" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h4 style="font-family: var(--font-display); font-size: 1.3rem; color: var(--color-accent); margin: 0;">Clinical Implications</h4>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(179,27,27,0.1); border-left: 4px solid #B31B1B;">
+                            <div style="color: #B31B1B; font-size: 1.5rem; margin-bottom: 0.5rem;">🔬</div>
+                            <h5 style="font-family: var(--font-display); margin: 0 0 0.5rem 0; font-size: 1.1rem;">Liquid Biopsy</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);">Circulating vesicles with miR-1246 could serve as early biomarkers for metastasis detection</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(207,69,32,0.1); border-left: 4px solid #CF4520;">
+                            <div style="color: #CF4520; font-size: 1.5rem; margin-bottom: 0.5rem;">💊</div>
+                            <h5 style="font-family: var(--font-display); margin: 0 0 0.5rem 0; font-size: 1.1rem;">Therapeutic Windows</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);">Multiple intervention points exist between vesicle release and tumor cell arrival</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(231,117,29,0.1); border-left: 4px solid #E7751D;">
+                            <div style="color: #E7751D; font-size: 1.5rem; margin-bottom: 0.5rem;">🎯</div>
+                            <h5 style="font-family: var(--font-display); margin: 0 0 0.5rem 0; font-size: 1.1rem;">Targeted Prevention</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);">Integrin profiles could predict which organs are at risk for metastasis</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(255,199,44,0.15); border-left: 4px solid #FFC72C;">
+                            <div style="color: #CF4520; font-size: 1.5rem; margin-bottom: 0.5rem;">🔄</div>
+                            <h5 style="font-family: var(--font-display); margin: 0 0 0.5rem 0; font-size: 1.1rem;">Next Steps</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);">Validation in immunocompetent models needed for clinical translation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/37194998/" target="_blank" style="color: var(--color-accent);">PubMed</a></p>
             </div>
         </div>
     </section>
