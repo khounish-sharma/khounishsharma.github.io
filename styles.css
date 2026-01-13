@@ -96,7 +96,7 @@ nav {
     min-height: auto;
     display: flex;
     align-items: center;
-    padding: 6rem 2rem 0.5rem;
+    padding: 7.5rem 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -246,7 +246,7 @@ section {
 
 /* Recent Updates Section - FTI Insights Style */
 #recent-updates {
-    padding: 0.5rem 2rem 3rem;
+    padding: 2rem 2rem 3rem;
     background: var(--color-bg);
 }
 
