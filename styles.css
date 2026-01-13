@@ -10,8 +10,8 @@
     --color-yellow: #FFC72C;
     --color-border: #DDDDDD;
     --color-white: #FFFFFF;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Source Sans 3', sans-serif;
+    --font-display: 'Open Sans', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 }
 
 * {
@@ -28,7 +28,7 @@ body {
     font-family: var(--font-body);
     background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* Navigation */
@@ -110,35 +110,36 @@ nav {
 }
 
 .hero-greeting {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-text-muted);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    font-size: clamp(2.25rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-style: italic;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
     color: var(--color-accent);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-bio {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
     max-width: 500px;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 2rem;
+    line-height: 1.8;
 }
 
 .hero-links {
@@ -227,8 +228,8 @@ section {
 
 .section-title {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 500;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
     position: relative;
     display: inline-block;
 }
@@ -259,14 +260,14 @@ section {
 .update-card {
     background: var(--color-white);
     border: 1px solid var(--color-border);
-    padding: 2rem;
+    padding: 1.75rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
     position: relative;
-    min-height: 240px;
+    min-height: 260px;
 }
 
 .update-card::before {
@@ -314,10 +315,10 @@ section {
 
 .update-card-title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.35;
-    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1rem;
     color: var(--color-text);
     transition: color 0.3s;
 }
@@ -329,9 +330,9 @@ section {
 .update-card-description {
     font-size: 0.9rem;
     color: var(--color-text-muted);
-    line-height: 1.55;
+    line-height: 1.7;
     flex-grow: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .update-card-meta {
@@ -407,9 +408,9 @@ section {
 
 .pub-title {
     font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
     margin-bottom: 0.75rem;
 }
 
@@ -431,7 +432,8 @@ section {
 
 .pub-section-header {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin: 2.5rem 0 1.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--color-accent);
@@ -483,8 +485,8 @@ section {
 
 .blog-item-title {
     font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -516,10 +518,10 @@ section {
 
 .takeaway-title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--color-accent);
     margin-bottom: 1.25rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .takeaway-list {
