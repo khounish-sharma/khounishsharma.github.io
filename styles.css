@@ -93,10 +93,10 @@ nav {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
-    padding: 8rem 2rem 1rem;
+    padding: 6.5rem 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -104,7 +104,7 @@ nav {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
     align-items: center;
     width: 100%;
 }
@@ -114,30 +114,31 @@ nav {
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 500;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-style: italic;
     color: var(--color-accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 .hero-bio {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--color-text-muted);
     max-width: 500px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .hero-links {
@@ -180,13 +181,13 @@ nav {
 
 .hero-headshot {
     width: 100%;
-    max-width: 400px;
+    max-width: 320px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
 .headshot-placeholder {
     width: 100%;
-    max-width: 400px;
+    max-width: 320px;
     aspect-ratio: 3/4;
     background-color: var(--color-accent);
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
@@ -205,13 +206,13 @@ nav {
 
 /* Section Styles */
 section {
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section-header {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -245,7 +246,7 @@ section {
 
 /* Recent Updates Section - FTI Insights Style */
 #recent-updates {
-    padding: 4rem 2rem;
+    padding: 1.5rem 2rem 3rem;
     background: var(--color-bg);
 }
 
@@ -258,14 +259,14 @@ section {
 .update-card {
     background: var(--color-white);
     border: 1px solid var(--color-border);
-    padding: 2rem;
+    padding: 1.5rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
     position: relative;
-    min-height: 280px;
+    min-height: 240px;
 }
 
 .update-card::before {
@@ -313,10 +314,10 @@ section {
 
 .update-card-title {
     font-family: var(--font-display);
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.35;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--color-text);
     transition: color 0.3s;
 }
@@ -326,11 +327,11 @@ section {
 }
 
 .update-card-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.55;
     flex-grow: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .update-card-meta {
