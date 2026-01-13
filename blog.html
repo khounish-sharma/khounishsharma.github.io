@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Khounish Sharma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Khounish Sharma</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section id="blog" style="padding-top: 6rem;">
+        <div class="section-header"><p class="section-label">Insights</p><h2 class="section-title">Blog</h2></div>
+        <div class="blog-preview">
+            <div class="blog-list">
+                <div class="blog-item" onclick="showBlogPost(1)"><div><span class="blog-category" style="color: var(--color-accent);">Published Article</span><h3 class="blog-item-title">The HDF vs. HD Debate: Why the US Should Pump the Brakes</h3></div><span class="blog-item-date">2025</span></div>
+                <div class="blog-item" onclick="showBlogPost(2)"><div><span class="blog-category" style="color: var(--color-accent);">Published Article</span><h3 class="blog-item-title">ICER's Shared Savings: Good Intentions, Troubling Incentives</h3></div><span class="blog-item-date">2025</span></div>
+                <div class="blog-item" onclick="showBlogPost(3)"><div><span class="blog-category" style="color: var(--color-accent);">Published Article</span><h3 class="blog-item-title">How Tumors Prepare Distant Organs for Metastasis</h3></div><span class="blog-item-date">2023</span></div>
+                <div class="blog-item" onclick="showBlogPost(4)"><div><span class="blog-category" style="color: var(--color-orange-dark);">Conference Abstract</span><h3 class="blog-item-title">Cost-Offset Analysis of BTK Inhibitors in CLL</h3></div><span class="blog-item-date">2024</span></div>
+                <div class="blog-item" onclick="showBlogPost(5)"><div><span class="blog-category" style="color: var(--color-orange-dark);">Conference Abstract</span><h3 class="blog-item-title">Economic Impact of Pediatric Nutritional Supplements in LMICs</h3></div><span class="blog-item-date">2024</span></div>
+                <div class="blog-item" onclick="showBlogPost(7)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Real-World Evidence in Medicare Drug Price Negotiations</h3></div><span class="blog-item-date">2025</span></div>
+                <div class="blog-item" onclick="showBlogPost(8)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Best Practices for Valuing Societal Health Impacts</h3></div><span class="blog-item-date">2024</span></div>
+                <div class="blog-item" onclick="showBlogPost(9)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Insurance Value in Rare Diseases: The DMD Case Study</h3></div><span class="blog-item-date">2024</span></div>
+                <div class="blog-item" onclick="showBlogPost(10)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Mitigating the IRA's Impact on Drug Innovation</h3></div><span class="blog-item-date">2023</span></div>
+            </div>
+        </div>
+
+        <div id="blog-post-1" class="blog-full-post">
+            <button onclick="hideBlogPost(1)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: var(--color-accent); margin-bottom: 1rem;">Published Article</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">The HDF vs. HD Debate: Why the US Should Pump the Brakes on Hemodiafiltration</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Kidney360, 2025 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">The CONVINCE trial made headlines by showing that hemodiafiltration (HDF) reduced mortality by 23% compared to conventional hemodialysis (HD). Naturally, this sparked calls to make HDF the new standard of care in the United States. But in our published counterpoint in <em>Kidney360</em>, we argue that rushing to adopt HDF would be premature and potentially harmful to the very patients we're trying to help.</p>
+                <p style="margin-bottom: 1.5rem;">The core issue isn't whether HDF can work; it's whether it can work <em>here</em>, given our unique healthcare infrastructure. Europe, where most HDF trials were conducted, has fundamentally different dialysis systems with longer treatment times, stricter convective volume requirements, and different payment models. The CONVINCE trial required patients to achieve convective volumes of ≥23 liters per session. In the US, achieving these volumes consistently would require significant changes to treatment protocols, staffing, and equipment.</p>
+                <p style="margin-bottom: 1.5rem;">Then there's the cost question. HDF requires ultrapure dialysate, specialized machines, and longer treatment times. Medicare's bundled payment system doesn't currently incentivize these investments. Without payment reform, asking dialysis facilities to shoulder these costs could actually worsen care quality if resources are diverted from other evidence-based interventions.</p>
+                <p style="margin-bottom: 1.5rem;">Perhaps most importantly, we need US-specific trial data. The American dialysis population differs from European cohorts in important ways, including higher rates of diabetes, different racial demographics, and distinct comorbidity profiles.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>US dialysis systems lack the equipment, staffing, and protocols needed to deliver HDF at European standards</li>
+                        <li>Medicare's bundled payments don't incentivize the investments HDF requires</li>
+                        <li>US-specific trials are needed given different patient populations and healthcare contexts</li>
+                        <li>Payment reform and infrastructure development must precede widespread HDF adoption</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/40498562/" target="_blank" style="color: var(--color-accent);">Kidney360</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-2" class="blog-full-post">
+            <button onclick="hideBlogPost(2)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: var(--color-accent); margin-bottom: 1rem;">Published Article</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">ICER's Shared Savings: Good Intentions, Troubling Incentives for Severe Diseases</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Value in Health, 2025 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">The Institute for Clinical and Economic Review (ICER) wields enormous influence over drug pricing in the United States. When they introduced their "shared savings" approach, designed to give manufacturers credit for the broader economic benefits their drugs create, it seemed like a win for patients with severe conditions. Our research reveals a troubling paradox: the policy may actually penalize treatments for the most severe diseases.</p>
+                <p style="margin-bottom: 1.5rem;">Here's the problem: ICER's methodology calculates shared savings as a percentage of the value a drug creates beyond direct health benefits, including reduced caregiver burden, improved productivity, and lower disability costs. But our analysis found that as disease severity increases, the percentage of value captured by shared savings actually decreases.</p>
+                <p style="margin-bottom: 1.5rem;">Why does this happen? For extremely severe conditions, the health-related quality of life gains from treatment are so substantial that they dominate the value calculation. The societal benefits, while large in absolute terms, become a smaller proportion of total value.</p>
+                <p style="margin-bottom: 1.5rem;">This creates perverse incentives. Manufacturers might prioritize conditions where shared savings provide the biggest price premium, rather than diseases with the greatest unmet need.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>ICER's shared savings captures a smaller percentage of value for more severe diseases</li>
+                        <li>This creates incentives to develop drugs for moderate rather than severe conditions</li>
+                        <li>The methodology should be revised to better support treatments for high-severity diseases</li>
+                        <li>Value assessment must consider the full spectrum of disease burden</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/39357669/" target="_blank" style="color: var(--color-accent);">Value in Health</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-3" class="blog-full-post">
+            <button onclick="hideBlogPost(3)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: var(--color-accent); margin-bottom: 1rem;">Published Article</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">How Tumors Prepare Distant Organs for Metastasis</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Journal of Extracellular Vesicles, 2023 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">Cancer's deadliest trick isn't the primary tumor; it's metastasis, when cancer cells spread to distant organs. But how do tumors "prepare" these distant sites for colonization? Our research uncovered a fascinating mechanism: tumors send out tiny messengers called extracellular vesicles that prime distant organs for invasion.</p>
+                <p style="margin-bottom: 1.5rem;">These extracellular vesicles are like advance scouts. Released by the primary tumor, they travel through the bloodstream and are captured by cells in distant organs. When these organs capture the vesicles, they trigger an inflammatory response, creating what scientists call a "premetastatic niche," an environment that welcomes circulating tumor cells.</p>
+                <p style="margin-bottom: 1.5rem;">Understanding this process opens new therapeutic possibilities. If we can intercept these vesicles or block the inflammatory response they trigger, we might prevent metastasis before it starts.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>Tumors release extracellular vesicles that travel to distant organs</li>
+                        <li>These vesicles trigger inflammation that creates a welcoming environment for metastasis</li>
+                        <li>The "premetastatic niche" concept explains how cancer prepares distant sites for invasion</li>
+                        <li>Blocking this process could prevent metastasis and improve cancer outcomes</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/37194998/" target="_blank" style="color: var(--color-accent);">Journal of Extracellular Vesicles</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-4" class="blog-full-post">
+            <button onclick="hideBlogPost(4)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: var(--color-orange-dark); margin-bottom: 1rem;">Conference Abstract</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Cost-Offset Analysis of BTK Inhibitors in CLL</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Blood (ASH Annual Meeting), 2024 • 3 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">Bruton's tyrosine kinase (BTK) inhibitors have transformed treatment for chronic lymphocytic leukemia (CLL). But these drugs come with different safety profiles that affect downstream healthcare costs. Our analysis, presented at the American Society of Hematology annual meeting, examined how safety differences translate into cost differences for Medicare patients.</p>
+                <p style="margin-bottom: 1.5rem;">By analyzing real-world data, we quantified the costs associated with adverse events from different BTK inhibitors. Some drugs may have higher acquisition costs but lower costs from managing side effects, potentially offsetting the initial price difference.</p>
+                <p style="margin-bottom: 1.5rem;">This type of analysis helps payers and clinicians make more informed decisions by considering total cost of care, not just drug prices.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>BTK inhibitors have different safety profiles affecting total treatment costs</li>
+                        <li>Adverse event management costs can offset differences in drug acquisition costs</li>
+                        <li>Total cost of care analysis provides a more complete economic picture</li>
+                        <li>Real-world evidence is essential for understanding true treatment costs</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full abstract:</strong> <a href="https://ashpublications.org/blood/article/144/Supplement%201/5031/533641/" target="_blank" style="color: var(--color-accent);">Blood (ASH)</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-5" class="blog-full-post">
+            <button onclick="hideBlogPost(5)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: var(--color-orange-dark); margin-bottom: 1rem;">Conference Abstract</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Economic Impact of Pediatric Nutritional Supplements in LMICs</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Value in Health (ISPOR Conference), 2024 • 3 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">Childhood malnutrition in low- and middle-income countries (LMICs) doesn't just harm health; it has lifelong economic consequences. Children who don't receive adequate nutrition face cognitive deficits, reduced educational attainment, and lower lifetime earnings. Our research quantified these lifetime economic impacts across Asian LMICs.</p>
+                <p style="margin-bottom: 1.5rem;">Pediatric oral nutritional supplements (ONS) can address malnutrition, but policymakers need to understand the return on investment. By modeling the lifetime economic trajectory of children receiving ONS versus those who don't, we demonstrated substantial economic benefits from early nutritional intervention.</p>
+                <p style="margin-bottom: 1.5rem;">This evidence supports investment in pediatric nutrition programs as both a health intervention and an economic development strategy.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>Childhood malnutrition has lifelong economic consequences beyond health impacts</li>
+                        <li>Pediatric nutritional supplements can improve cognitive development and future earnings</li>
+                        <li>Economic modeling demonstrates strong return on investment for nutrition programs</li>
+                        <li>Evidence supports nutrition interventions as economic development policy</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full abstract:</strong> <a href="https://www.ftichep.com/insight/ispor-2024-panel-presentations-posters-may-5-8-2024-atlanta-ga/" target="_blank" style="color: var(--color-accent);">ISPOR 2024</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-7" class="blog-full-post">
+            <button onclick="hideBlogPost(7)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Real-World Evidence in Medicare Drug Price Negotiations</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Health Affairs Scholar, 2025 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">The Inflation Reduction Act empowered Medicare to negotiate drug prices for the first time. But how should CMS and manufacturers use real-world evidence (RWE) in these negotiations? Our paper provides a practical checklist for both parties.</p>
+                <p style="margin-bottom: 1.5rem;">Real-world evidence, data from actual clinical practice rather than controlled trials, can demonstrate a drug's value in diverse patient populations and real-world settings. However, RWE comes with methodological challenges that both negotiating parties must understand.</p>
+                <p style="margin-bottom: 1.5rem;">Our checklist covers data quality, analytical methods, and interpretation issues, helping ensure that RWE is used appropriately in price negotiations.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>Medicare drug price negotiations will increasingly rely on real-world evidence</li>
+                        <li>RWE can demonstrate drug value in diverse populations beyond clinical trials</li>
+                        <li>Methodological rigor is essential for credible RWE in negotiations</li>
+                        <li>Both CMS and manufacturers need clear standards for RWE quality and interpretation</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://academic.oup.com/healthaffairsscholar/article/3/3/qxaf030/8089876" target="_blank" style="color: var(--color-accent);">Health Affairs Scholar</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-8" class="blog-full-post">
+            <button onclick="hideBlogPost(8)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Best Practices for Valuing Societal Health Impacts</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Forum for Health Economics & Policy, 2024 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">When we evaluate new medicines, we typically focus on health outcomes. But treatments also affect caregivers, productivity, and society broadly. Our user guide synthesizes current best practices for measuring these broader societal impacts.</p>
+                <p style="margin-bottom: 1.5rem;">The guide covers methodological approaches for quantifying caregiver burden, productivity effects, and other societal impacts. It addresses common challenges like avoiding double-counting and handling uncertainty.</p>
+                <p style="margin-bottom: 1.5rem;">By providing clear guidance, we aim to improve consistency in how societal impacts are measured and incorporated into value assessments.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>Drug value extends beyond direct health outcomes to societal impacts</li>
+                        <li>Caregiver burden and productivity effects should be measured systematically</li>
+                        <li>Methodological consistency improves comparability across assessments</li>
+                        <li>Best practices help avoid common pitfalls like double-counting benefits</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://www.degruyterbrill.com/document/doi/10.1515/fhep-2024-0014/html" target="_blank" style="color: var(--color-accent);">Forum for Health Economics & Policy</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-9" class="blog-full-post">
+            <button onclick="hideBlogPost(9)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Insurance Value in Rare Diseases: The DMD Case Study</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">The American Journal of Managed Care, 2024 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">With devastating conditions like Duchenne muscular dystrophy (DMD), patients would pay almost anything to avoid the disease. This willingness to pay for protection, known as "insurance value," is typically ignored in cost-effectiveness analysis. Our research quantifies this missing piece.</p>
+                <p style="margin-bottom: 1.5rem;">Insurance value reflects that people are risk-averse. Given the choice between a certain moderate loss and a small probability of catastrophic loss, most people prefer the certain moderate loss. For rare diseases, the "premium" people would pay to avoid the risk represents real value.</p>
+                <p style="margin-bottom: 1.5rem;">For DMD, a progressive disorder leading to loss of ambulation and early death, we found substantial insurance value. Families facing a DMD diagnosis would have paid significant amounts to have avoided that risk.</p>
+                <p style="margin-bottom: 1.5rem;">Incorporating insurance value could substantially change the calculus for rare disease treatments, potentially supporting broader access.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>People value protection against catastrophic health losses beyond expected costs</li>
+                        <li>DMD represents a devastating diagnosis with progressive decline and early death</li>
+                        <li>Traditional cost-effectiveness analysis misses the value of reducing catastrophic risk</li>
+                        <li>Including insurance value could improve coverage decisions for rare disease treatments</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://www.ajmc.com/view/quantifying-the-insurance-value-for-rare-diseases-duchenne-muscular-dystrophy" target="_blank" style="color: var(--color-accent);">AJMC</a></p>
+            </div>
+        </div>
+
+        <div id="blog-post-10" class="blog-full-post">
+            <button onclick="hideBlogPost(10)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
+            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Mitigating the IRA's Impact on Drug Innovation</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">USC Schaeffer Center White Paper Series, 2023 • 4 min read</p>
+            <div style="line-height: 1.9;">
+                <p style="margin-bottom: 1.5rem;">The Inflation Reduction Act gave Medicare power to negotiate drug prices, which is a worthy goal. But our white paper examines potential unintended consequences for pharmaceutical innovation and proposes modifications to balance cost control with innovation incentives.</p>
+                <p style="margin-bottom: 1.5rem;">The core concern: if negotiations substantially reduce expected returns, some drugs won't be developed. Different negotiation timelines for small molecules (9 years) vs. biologics (13 years) may shift R&D investment. Orphan drug exclusions create complex incentives around indication expansion.</p>
+                <p style="margin-bottom: 1.5rem;">We propose modifications that preserve savings while protecting innovation: adjusting timelines, refining price-setting, and creating incentives for high-value therapeutic areas.</p>
+                <p style="margin-bottom: 1.5rem;">The goal is constructive policy improvement, not wholesale rejection of Medicare negotiation.</p>
+                <div class="takeaway-box">
+                    <h4 class="takeaway-title">Key Takeaways</h4>
+                    <ul class="takeaway-list">
+                        <li>Different negotiation timelines for small molecules vs. biologics may distort R&D investment</li>
+                        <li>Orphan drug exclusions create complex incentives around indication expansion strategies</li>
+                        <li>Chronic disease drugs for elderly patients face disproportionate impact from negotiations</li>
+                        <li>Targeted policy modifications could preserve cost savings while protecting innovation incentives</li>
+                    </ul>
+                </div>
+                <p><strong>Read the full paper:</strong> <a href="https://schaeffer.usc.edu/research/mitigating-the-inflation-reduction-acts-potential-adverse-impacts-on-the-prescription-drug-market/" target="_blank" style="color: var(--color-accent);">USC Schaeffer Center</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-name">Khounish Sharma</p>
+            <div class="footer-social">
+                <a href="https://scholar.google.com/citations?user=nZp6pNwAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <a href="https://www.linkedin.com/in/khounish-sharma-00b689212/" target="_blank">LinkedIn</a>
+            </div>
+            <p class="footer-copyright">© 2025 Khounish Sharma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById('navLinks').classList.toggle('active'); 
+        }
+        
+        function showBlogPost(id) { 
+            document.getElementById('blog-post-' + id).style.display = 'block'; 
+            document.querySelector('.blog-list').style.display = 'none'; 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function hideBlogPost(id) { 
+            document.getElementById('blog-post-' + id).style.display = 'none'; 
+            document.querySelector('.blog-list').style.display = 'flex'; 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Check if we should open a specific post (from Recent Updates links)
+        document.addEventListener('DOMContentLoaded', function() {
+            const postToOpen = localStorage.getItem('openPost');
+            if (postToOpen) {
+                showBlogPost(postToOpen);
+                localStorage.removeItem('openPost');
+            }
+        });
+    </script>
+</body>
+</html>

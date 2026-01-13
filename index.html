@@ -7,104 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --color-bg: #F7F7F7; --color-text: #1a1a1a; --color-text-muted: #555555; --color-accent: #B31B1B; --color-accent-dark: #8a1515; --color-orange-dark: #CF4520; --color-orange-bright: #E7751D; --color-yellow: #FFC72C; --color-border: #DDDDDD; --color-white: #FFFFFF; --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'Source Sans 3', sans-serif; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); background-color: var(--color-bg); color: var(--color-text); line-height: 1.7; }
-        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--color-accent); z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--color-white); text-decoration: none; }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { font-size: 0.9rem; color: rgba(255,255,255,0.85); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--color-yellow); }
-        .mobile-menu { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .mobile-menu span { width: 24px; height: 2px; background: var(--color-white); }
-        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2rem 1rem; max-width: 1200px; margin: 0 auto; }
-        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; width: 100%; }
-        .hero-greeting { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted); margin-bottom: 1.5rem; }
-        .hero-name { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 500; line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero-title { font-family: var(--font-display); font-size: 1.5rem; font-style: italic; color: var(--color-accent); margin-bottom: 2rem; }
-        .hero-bio { font-size: 1.1rem; color: var(--color-text-muted); max-width: 500px; margin-bottom: 2.5rem; }
-        .hero-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .hero-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-white); text-decoration: none; padding: 0.75rem 1.5rem; background: var(--color-accent); transition: all 0.3s; }
-        .hero-link:hover { background: var(--color-orange-dark); transform: translateY(-2px); }
-        .hero-link.secondary { background: transparent; color: var(--color-text); border: 2px solid var(--color-accent); }
-        .hero-link.secondary:hover { background: var(--color-accent); color: var(--color-white); }
-        .hero-image { position: relative; }
-        .hero-headshot { width: 100%; max-width: 400px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .headshot-placeholder { width: 100%; max-width: 400px; aspect-ratio: 3/4; background-color: var(--color-accent); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .hero-image::before { content: ''; position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 1px solid var(--color-border); z-index: -1; }
-        section { padding: 3rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-header { margin-bottom: 4rem; text-align: center; }
-        .section-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-orange-dark); margin-bottom: 1rem; font-weight: 600; }
-        .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; position: relative; display: inline-block; }
-        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(90deg, var(--color-accent), var(--color-orange-bright)); }
-        .publications-section { background: white; border: 1px solid var(--color-border); padding: 4rem; }
-        .pub-intro { text-align: center; margin-bottom: 3rem; }
-        .pub-intro p { color: var(--color-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem; }
-        .scholar-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-accent); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid var(--color-accent); transition: all 0.3s; }
-        .scholar-link:hover { background: var(--color-accent); color: white; }
-        .publication { padding: 2rem 0; border-bottom: 1px solid var(--color-border); }
-        .publication:last-child { border-bottom: none; }
-        .pub-year { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); margin-bottom: 0.75rem; }
-        .pub-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; line-height: 1.4; margin-bottom: 0.75rem; }
-        .pub-title a { color: var(--color-text); text-decoration: none; transition: color 0.3s; }
-        .pub-title a:hover { color: var(--color-accent); }
-        .pub-journal { font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; }
-        .pub-section-header { font-family: var(--font-display); font-size: 1.5rem; margin: 2.5rem 0 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--color-accent); color: var(--color-accent); }
-        .pub-section-header.contributions { border-bottom-color: var(--color-orange-dark); color: var(--color-orange-dark); }
-        .pub-section-header.working { border-bottom-color: var(--color-text-muted); color: var(--color-text-muted); }
-        .blog-preview { background: white; border: 1px solid var(--color-border); padding: 4rem; }
-        .blog-list { display: flex; flex-direction: column; gap: 2rem; }
-        .blog-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--color-border); text-decoration: none; color: inherit; cursor: pointer; }
-        .blog-item:last-child { border-bottom: none; }
-        .blog-item:hover .blog-item-title { color: var(--color-accent); }
-        .blog-item-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; transition: color 0.3s; }
-        .blog-item-date { font-size: 0.85rem; color: var(--color-text-muted); white-space: nowrap; }
-        .blog-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem; }
-        .blog-full-post { display: none; background: white; border: 1px solid var(--color-border); padding: 3rem; margin-top: 2rem; }
-        .takeaway-box { margin: 2.5rem 0; }
-        .takeaway-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--color-accent); margin-bottom: 1.25rem; font-weight: 500; }
-        .takeaway-list { list-style: none; }
-        .takeaway-list li { position: relative; padding: 0.75rem 0 0.75rem 1.75rem; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.95rem; color: var(--color-text-muted); }
-        .takeaway-list li:last-child { border-bottom: none; }
-        .takeaway-list li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 8px; height: 8px; background: linear-gradient(135deg, var(--color-accent), var(--color-orange-dark)); border-radius: 50%; }
-        .contact-section { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-orange-dark) 100%); padding: 4rem; text-align: center; color: var(--color-white); }
-        .contact-description { font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem; }
-        .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-        .contact-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-white); text-decoration: none; padding: 0.75rem 1.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s; }
-        .contact-link:hover { background: rgba(255,255,255,0.1); border-color: var(--color-white); }
-        footer { background: var(--color-text); color: var(--color-white); padding: 3rem 2rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
-        .footer-name { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem; }
-        .footer-social { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
-        .footer-social a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; }
-        .footer-social a:hover { color: var(--color-yellow); }
-        .footer-copyright { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
-        @media (max-width: 900px) {
-            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-            .hero-text { order: 2; } .hero-image { order: 1; }
-            .headshot-placeholder, .hero-headshot { max-width: 300px; margin: 0 auto; }
-            .hero-bio { margin: 0 auto 2.5rem; }
-            .hero-links { justify-content: center; }
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-accent); flex-direction: column; padding: 2rem; gap: 1.5rem; }
-            .nav-links.active { display: flex; }
-            .mobile-menu { display: flex; }
-            .blog-preview, .publications-section, .contact-section { padding: 2rem; }
-            .blog-item { flex-direction: column; gap: 0.5rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="#home" class="nav-logo">Khounish Sharma</a>
+            <a href="index.html" class="nav-logo">Khounish Sharma</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         </div>
@@ -128,256 +41,39 @@
         </div>
     </section>
 
-    <section id="publications">
+    <section id="recent-updates">
         <div class="section-header">
-            <p class="section-label">Research</p>
-            <h2 class="section-title">Publications</h2>
+            <p class="section-label">What's New</p>
+            <h2 class="section-title">Recent Updates</h2>
         </div>
-        <div class="publications-section">
-            <div class="pub-intro">
-                <p>My research explores health policy and economics, with a focus on kidney disease and dialysis care.</p>
-                <a href="https://scholar.google.com/citations?user=nZp6pNwAAAAJ&hl=en" class="scholar-link" target="_blank">View on Google Scholar</a>
-            </div>
-            <h3 class="pub-section-header">Published Articles</h3>
-            <article class="publication"><p class="pub-year">2025</p><h3 class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/40498562/" target="_blank">Hemodiafiltration Should Be the Primary In-Center Kidney Replacement Modality in ESKD: CON</a></h3><p class="pub-journal">Kidney360, 2025</p></article>
-            <article class="publication"><p class="pub-year">2025</p><h3 class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/39357669/" target="_blank">Will ICER's Shared Savings Approach Decrease Value-Based Prices Most for the Most Severe Diseases?</a></h3><p class="pub-journal">Value in Health, 2025</p></article>
-            <article class="publication"><p class="pub-year">2023</p><h3 class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/37194998/" target="_blank">The Capture of Extracellular Vesicles Endogenously Released by Xenotransplanted Tumours Induces an Inflammatory Reaction in the Premetastatic Niche</a></h3><p class="pub-journal">Journal of Extracellular Vesicles, 2023</p></article>
-            <h3 class="pub-section-header">Published Abstracts</h3>
-            <article class="publication"><p class="pub-year">2024</p><h3 class="pub-title"><a href="https://ashpublications.org/blood/article/144/Supplement%201/5031/533641/" target="_blank">Cost-Offset Analysis Utilizing BTK Inhibitors Safety Profiles in Medicare CLL Patients</a></h3><p class="pub-journal">Blood (ASH Annual Meeting), 2024</p></article>
-            <article class="publication"><p class="pub-year">2024</p><h3 class="pub-title"><a href="https://www.ftichep.com/insight/ispor-2024-panel-presentations-posters-may-5-8-2024-atlanta-ga/" target="_blank">Quantifying the Lifetime Economic Impact of Pediatric Oral Nutritional Supplements in LMICs in Asia</a></h3><p class="pub-journal">Value in Health (ISPOR Conference), 2024</p></article>
-            <h3 class="pub-section-header contributions">Major Contributions to Published Work</h3>
-            <article class="publication"><p class="pub-year">2025</p><h3 class="pub-title"><a href="https://academic.oup.com/healthaffairsscholar/article/3/3/qxaf030/8089876" target="_blank">Use of Real-World Evidence in the Medicare Drug Price Negotiation Program: A Checklist for CMS and Manufacturers</a></h3><p class="pub-journal">Health Affairs Scholar, 2025</p></article>
-            <article class="publication"><p class="pub-year">2024</p><h3 class="pub-title"><a href="https://www.degruyterbrill.com/document/doi/10.1515/fhep-2024-0014/html" target="_blank">Valuing the Societal Impact of Medicines: A User Guide to Current Best Practices</a></h3><p class="pub-journal">Forum for Health Economics & Policy, 2024</p></article>
-            <article class="publication"><p class="pub-year">2024</p><h3 class="pub-title"><a href="https://www.ajmc.com/view/quantifying-the-insurance-value-for-rare-diseases-duchenne-muscular-dystrophy" target="_blank">Quantifying the Insurance Value for Rare Diseases: Duchenne Muscular Dystrophy</a></h3><p class="pub-journal">The American Journal of Managed Care, 2024</p></article>
-            <article class="publication"><p class="pub-year">2023</p><h3 class="pub-title"><a href="https://schaeffer.usc.edu/research/mitigating-the-inflation-reduction-acts-potential-adverse-impacts-on-the-prescription-drug-market/" target="_blank">Mitigating the Inflation Reduction Act's Adverse Impacts on the Prescription Drug Market</a></h3><p class="pub-journal">USC Schaeffer Center White Paper Series, 2023</p></article>
-            <h3 class="pub-section-header working">Working Papers (Under Review)</h3>
-            <article class="publication"><p class="pub-year">Under Review</p><h3 class="pub-title"><a href="#" target="_blank">Quantifying the Value of Novel DMD Treatments Using GRACE</a></h3><p class="pub-journal">Value in Health (under peer-review)</p></article>
-            <article class="publication"><p class="pub-year">Under Review</p><h3 class="pub-title"><a href="#" target="_blank">How Much Do Modeling Assumptions Impact Treatment Value Under GRACE</a></h3><p class="pub-journal">Medical Decision Making (under peer-review)</p></article>
-            <article class="publication"><p class="pub-year">Expected 2026</p><h3 class="pub-title"><a href="#" target="_blank">Lifetime Economic Impact of Pediatric ONS in Low- and Middle-Income Countries</a></h3><p class="pub-journal">Public Health Nutrition (expected Spring 2026)</p></article>
-        </div>
-    </section>
-
-    <section id="blog">
-        <div class="section-header"><p class="section-label">Insights</p><h2 class="section-title">Blog</h2></div>
-        <div class="blog-preview">
-            <div class="blog-list">
-                <div class="blog-item" onclick="showBlogPost(1)"><div><span class="blog-category" style="color: var(--color-accent);">Published Article</span><h3 class="blog-item-title">The HDF vs. HD Debate: Why the US Should Pump the Brakes</h3></div><span class="blog-item-date">2025</span></div>
-                <div class="blog-item" onclick="showBlogPost(2)"><div><span class="blog-category" style="color: var(--color-accent);">Published Article</span><h3 class="blog-item-title">ICER's Shared Savings: Good Intentions, Troubling Incentives</h3></div><span class="blog-item-date">2025</span></div>
-                <div class="blog-item" onclick="showBlogPost(3)"><div><span class="blog-category" style="color: var(--color-accent);">Published Article</span><h3 class="blog-item-title">How Tumors Prepare Distant Organs for Metastasis</h3></div><span class="blog-item-date">2023</span></div>
-                <div class="blog-item" onclick="showBlogPost(4)"><div><span class="blog-category" style="color: var(--color-orange-dark);">Conference Abstract</span><h3 class="blog-item-title">Cost-Offset Analysis of BTK Inhibitors in CLL</h3></div><span class="blog-item-date">2024</span></div>
-                <div class="blog-item" onclick="showBlogPost(5)"><div><span class="blog-category" style="color: var(--color-orange-dark);">Conference Abstract</span><h3 class="blog-item-title">Economic Impact of Pediatric Nutritional Supplements in LMICs</h3></div><span class="blog-item-date">2024</span></div>
-                <div class="blog-item" onclick="showBlogPost(7)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Real-World Evidence in Medicare Drug Price Negotiations</h3></div><span class="blog-item-date">2025</span></div>
-                <div class="blog-item" onclick="showBlogPost(8)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Best Practices for Valuing Societal Health Impacts</h3></div><span class="blog-item-date">2024</span></div>
-                <div class="blog-item" onclick="showBlogPost(9)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Insurance Value in Rare Diseases: The DMD Case Study</h3></div><span class="blog-item-date">2024</span></div>
-                <div class="blog-item" onclick="showBlogPost(10)"><div><span class="blog-category" style="color: #666;">Major Contribution</span><h3 class="blog-item-title">Mitigating the IRA's Impact on Drug Innovation</h3></div><span class="blog-item-date">2023</span></div>
-            </div>
-        </div>
-
-        <div id="blog-post-1" class="blog-full-post">
-            <button onclick="hideBlogPost(1)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: var(--color-accent); margin-bottom: 1rem;">Published Article</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">The HDF vs. HD Debate: Why the US Should Pump the Brakes on Hemodiafiltration</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Kidney360, 2025 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">The CONVINCE trial made headlines by showing that hemodiafiltration (HDF) reduced mortality by 23% compared to conventional hemodialysis (HD). Naturally, this sparked calls to make HDF the new standard of care in the United States. But in our published counterpoint in <em>Kidney360</em>, we argue that rushing to adopt HDF would be premature and potentially harmful to the very patients we're trying to help.</p>
-                <p style="margin-bottom: 1.5rem;">The core issue isn't whether HDF can work; it's whether it can work <em>here</em>, given our unique healthcare infrastructure. Europe, where most HDF trials were conducted, has fundamentally different dialysis systems with longer treatment times, stricter convective volume requirements, and different payment models. The CONVINCE trial required patients to achieve convective volumes of ≥23 liters per session. In the US, achieving these volumes consistently would require significant changes to treatment protocols, staffing, and equipment.</p>
-                <p style="margin-bottom: 1.5rem;">Then there's the cost question. HDF requires ultrapure dialysate, specialized machines, and longer treatment times. Medicare's bundled payment system doesn't currently incentivize these investments. Without payment reform, asking dialysis facilities to shoulder these costs could actually worsen care quality if resources are diverted from other evidence-based interventions.</p>
-                <p style="margin-bottom: 1.5rem;">Perhaps most importantly, we need US-specific trial data. The American dialysis population differs from European cohorts in important ways, including higher rates of diabetes, different racial demographics, and distinct comorbidity profiles.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>US dialysis systems lack the equipment, staffing, and protocols needed to deliver HDF at European standards</li>
-                        <li>Medicare's bundled payments don't incentivize the investments HDF requires</li>
-                        <li>US-specific trials are needed given different patient populations and healthcare contexts</li>
-                        <li>Payment reform and infrastructure development must precede widespread HDF adoption</li>
-                    </ul>
+        <div class="updates-grid">
+            <a href="blog.html" class="update-card" onclick="localStorage.setItem('openPost', '1');">
+                <div class="update-card-type publication-type">Blog Post</div>
+                <h3 class="update-card-title">The HDF vs. HD Debate: Why the US Should Pump the Brakes</h3>
+                <p class="update-card-description">The CONVINCE trial showed hemodiafiltration reduced mortality by 23%, but rushing to adopt HDF in the US would be premature given our unique healthcare infrastructure.</p>
+                <div class="update-card-meta">
+                    <span class="update-card-source">Kidney360</span>
+                    <span class="update-card-date">2025</span>
                 </div>
-                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/40498562/" target="_blank" style="color: var(--color-accent);">Kidney360</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-2" class="blog-full-post">
-            <button onclick="hideBlogPost(2)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: var(--color-accent); margin-bottom: 1rem;">Published Article</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">ICER's Shared Savings: Good Intentions, Troubling Incentives for Severe Diseases</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Value in Health, 2025 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">The Institute for Clinical and Economic Review (ICER) wields enormous influence over drug pricing in the United States. When they introduced their "shared savings" approach, designed to give manufacturers credit for the broader economic benefits their drugs create, it seemed like a win for patients with severe conditions. Our research reveals a troubling paradox: the policy may actually penalize treatments for the most severe diseases.</p>
-                <p style="margin-bottom: 1.5rem;">Here's the problem: ICER's methodology calculates shared savings as a percentage of the value a drug creates beyond direct health benefits, including reduced caregiver burden, improved productivity, and lower disability costs. But our analysis found that as disease severity increases, the percentage of value captured by shared savings actually decreases.</p>
-                <p style="margin-bottom: 1.5rem;">Why does this happen? For extremely severe conditions, the health-related quality of life gains from treatment are so substantial that they dominate the value calculation. The societal benefits, while large in absolute terms, become a smaller proportion of total value.</p>
-                <p style="margin-bottom: 1.5rem;">This creates perverse incentives. Manufacturers might prioritize conditions where shared savings provide the biggest price premium, rather than diseases with the greatest unmet need.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>More severe diseases receive proportionally smaller price increases from shared savings</li>
-                        <li>Manufacturers may be incentivized to prioritize less severe conditions</li>
-                        <li>Patients with severe conditions may face worse access under this framework</li>
-                        <li>ICER's methodology should be revised to avoid disadvantaging treatments for severe diseases</li>
-                    </ul>
+            </a>
+            <a href="blog.html" class="update-card" onclick="localStorage.setItem('openPost', '2');">
+                <div class="update-card-type publication-type">Blog Post</div>
+                <h3 class="update-card-title">ICER's Shared Savings: Good Intentions, Troubling Incentives</h3>
+                <p class="update-card-description">Our research reveals a troubling paradox: ICER's shared savings approach may actually penalize treatments for the most severe diseases.</p>
+                <div class="update-card-meta">
+                    <span class="update-card-source">Value in Health</span>
+                    <span class="update-card-date">2025</span>
                 </div>
-                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/39357669/" target="_blank" style="color: var(--color-accent);">Value in Health</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-3" class="blog-full-post">
-            <button onclick="hideBlogPost(3)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: var(--color-accent); margin-bottom: 1rem;">Published Article</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">How Tumors Prepare Distant Organs for Metastasis</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Journal of Extracellular Vesicles, 2023 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">Metastasis, cancer's spread to distant organs, causes 90% of cancer deaths. But before tumor cells arrive at a new location, something remarkable happens: the primary tumor sends molecular "messages" to prepare the distant site. Our research at Children's Hospital Los Angeles uncovered how this communication works through tumor-derived extracellular vesicles (TEVs).</p>
-                <p style="margin-bottom: 1.5rem;">We developed an innovative approach: engineering melanoma and neuroblastoma cells to release GFP-tagged vesicles we could track in living mice. These vesicles traveled through the bloodstream and were captured by immune cells at distant organs, specifically the organs where metastasis would later occur, days before any tumor cells arrived.</p>
-                <p style="margin-bottom: 1.5rem;">The vesicles carried specific cargo, including microRNA-1246, which triggered inflammatory gene expression changes that "prepared the soil" for incoming tumor cells. The process was highly organ-specific: vesicles from lung-metastasizing tumors were captured only in lungs.</p>
-                <p style="margin-bottom: 1.5rem;">This work opens exciting possibilities: if we can detect these vesicles in blood (liquid biopsy), we might predict metastasis before it happens. And if we can block vesicle uptake, we might prevent the pre-metastatic niche from forming.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>Tumor-derived vesicles carrying miR-1246 appear in blood days before metastasis</li>
-                        <li>Vesicles are captured by macrophages at future metastatic sites, triggering inflammatory changes</li>
-                        <li>The process is organ-specific, with vesicles targeting the same organs tumors will later colonize</li>
-                        <li>Potential applications include liquid biopsy for early detection and blocking vesicle uptake to prevent metastasis</li>
-                    </ul>
+            </a>
+            <a href="publications.html" class="update-card">
+                <div class="update-card-type research-type">Research Publication</div>
+                <h3 class="update-card-title">Real-World Evidence in Medicare Drug Price Negotiations</h3>
+                <p class="update-card-description">A comprehensive checklist for CMS and manufacturers on using real-world evidence in the Medicare Drug Price Negotiation Program.</p>
+                <div class="update-card-meta">
+                    <span class="update-card-source">Health Affairs Scholar</span>
+                    <span class="update-card-date">2025</span>
                 </div>
-                <p><strong>Read the full paper:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/37194998/" target="_blank" style="color: var(--color-accent);">Journal of Extracellular Vesicles</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-4" class="blog-full-post">
-            <button onclick="hideBlogPost(4)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: var(--color-orange-dark); margin-bottom: 1rem;">Conference Abstract</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Cost-Offset Analysis of BTK Inhibitors in Chronic Lymphocytic Leukemia</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Blood (ASH Annual Meeting), 2024 • 3 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">Bruton's tyrosine kinase (BTK) inhibitors have revolutionized treatment for chronic lymphocytic leukemia (CLL). But these targeted therapies come with different safety profiles, and safety differences translate to real healthcare costs. Our research quantified how adverse event profiles affect the total cost of CLL treatment for Medicare patients.</p>
-                <p style="margin-bottom: 1.5rem;">We compared the safety profiles of different covalent BTK inhibitors and calculated the downstream medical costs associated with managing their adverse events. This "cost-offset" approach provides a more complete picture of drug value than looking at acquisition costs alone.</p>
-                <p style="margin-bottom: 1.5rem;">For Medicare patients, who comprise a significant portion of CLL patients given the disease's typical age of onset, these cost differences are substantial. Adverse events requiring hospitalization, additional medications, or specialist visits accumulate over years-long treatment durations.</p>
-                <p style="margin-bottom: 1.5rem;">A drug with a lower price tag but worse safety profile might actually cost more in the long run, and more importantly, cause more patient suffering.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>Different BTK inhibitors have distinct adverse event profiles with real cost implications</li>
-                        <li>Drug acquisition price alone doesn't capture the true cost of treatment</li>
-                        <li>Cost differences are particularly relevant for Medicare patients who make up most CLL cases</li>
-                        <li>This data helps payers and clinicians make more informed treatment decisions</li>
-                    </ul>
-                </div>
-                <p><strong>Read the abstract:</strong> <a href="https://ashpublications.org/blood/article/144/Supplement%201/5031/533641/" target="_blank" style="color: var(--color-accent);">ASH Blood Journal</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-5" class="blog-full-post">
-            <button onclick="hideBlogPost(5)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: var(--color-orange-dark); margin-bottom: 1rem;">Conference Abstract</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Economic Impact of Pediatric Nutritional Supplements in Low-Middle Income Countries</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Value in Health (ISPOR Conference), 2024 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">Childhood stunting affects 149 million children under five worldwide, with devastating long-term consequences. Stunted children face immediate health challenges and are more likely to develop chronic diseases, achieve less education, and earn lower incomes throughout their lives.</p>
-                <p style="margin-bottom: 1.5rem;">Using Demographic and Health Survey data from 15+ countries, we built models tracing how nutritional interventions cascade through the life course. Better nutrition improves cognitive development, which improves educational attainment, which improves labor market outcomes. These effects compound over decades, making early investment highly valuable.</p>
-                <p style="margin-bottom: 1.5rem;">We quantified these benefits in economic terms that policymakers can use. When a government considers whether to fund national-scale ONS programs, they need to weigh costs against benefits. Our analysis provides the benefit side of that equation.</p>
-                <p style="margin-bottom: 1.5rem;">For countries where stunting prevalence remains high, this research supports the case for direct nutritional interventions. The investment pays back many times over, though not immediately, which is why this kind of economic modeling matters for policy decisions.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>Nutritional interventions create a lifetime cascade: better nutrition → cognitive gains → education → productivity</li>
-                        <li>Effects compound over decades, making early investment highly cost-effective</li>
-                        <li>Analysis covers 15+ lower-middle income Asian countries using DHS data</li>
-                        <li>Results provide policymakers with economic justification for national ONS programs</li>
-                    </ul>
-                </div>
-                <p><strong>Read the abstract:</strong> <a href="https://www.ftichep.com/insight/ispor-2024-panel-presentations-posters-may-5-8-2024-atlanta-ga/" target="_blank" style="color: var(--color-accent);">ISPOR 2024</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-7" class="blog-full-post">
-            <button onclick="hideBlogPost(7)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Real-World Evidence in Medicare Drug Price Negotiations</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Health Affairs Scholar, 2025 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">The Inflation Reduction Act gave Medicare unprecedented power to negotiate drug prices. But how should CMS evaluate a drug's value? Clinical trial data tells only part of the story. Real-world evidence (RWE) from actual patient populations provides crucial insights that trials cannot capture.</p>
-                <p style="margin-bottom: 1.5rem;">Our paper provides a practical checklist for using RWE effectively. RWE matters because trials typically enroll healthier, younger patients than the Medicare population. RWE reveals how drugs perform in older adults with multiple conditions.</p>
-                <p style="margin-bottom: 1.5rem;">But RWE isn't automatically trustworthy. Our checklist helps distinguish high-quality RWE from misleading analyses: data source quality, comparator selection, confounding, and pre-specification are all critical considerations.</p>
-                <p style="margin-bottom: 1.5rem;">For manufacturers, the checklist provides guidance on developing RWE strategies that will be credible to CMS. For CMS, it offers a framework for systematically evaluating the RWE that manufacturers submit.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>Assess data source completeness, accuracy, and relevance to the Medicare population</li>
-                        <li>Evaluate whether comparison groups are appropriate and well-matched</li>
-                        <li>Examine methods used to address selection bias and unmeasured confounders</li>
-                        <li>Verify that analyses were pre-specified before data were examined</li>
-                    </ul>
-                </div>
-                <p><strong>Read the full paper:</strong> <a href="https://academic.oup.com/healthaffairsscholar/article/3/3/qxaf030/8089876" target="_blank" style="color: var(--color-accent);">Health Affairs Scholar</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-8" class="blog-full-post">
-            <button onclick="hideBlogPost(8)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Best Practices for Valuing Societal Health Impacts</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Forum for Health Economics & Policy, 2024 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">Traditional cost-effectiveness analysis focuses on payer costs and patient outcomes. But medicines create broader ripple effects: reduced caregiver burden, improved productivity, lower disability payments. Our guide provides practical guidance on measuring these societal impacts.</p>
-                <p style="margin-bottom: 1.5rem;">When value assessments ignore societal benefits, treatments for conditions with large spillover effects, such as Alzheimer's disease or pediatric illnesses, look less valuable than they truly are. This can lead to coverage restrictions that harm patients.</p>
-                <p style="margin-bottom: 1.5rem;">Our guide covers productivity impacts, caregiver burden, household production, and broader welfare impacts, with methodological recommendations and practical examples from published literature.</p>
-                <p style="margin-bottom: 1.5rem;">We also address when societal perspective analyses are most important and how to communicate results to decision-makers unfamiliar with expanded cost-effectiveness frameworks.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>Patient productivity impacts: changes in work capacity and labor force participation</li>
-                        <li>Caregiver burden: time costs and health effects on family caregivers</li>
-                        <li>Household production: non-market contributions like childcare and home maintenance</li>
-                        <li>Broader welfare: educational outcomes, social participation, and community effects</li>
-                    </ul>
-                </div>
-                <p><strong>Read the full paper:</strong> <a href="https://www.degruyterbrill.com/document/doi/10.1515/fhep-2024-0014/html" target="_blank" style="color: var(--color-accent);">Forum for Health Economics & Policy</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-9" class="blog-full-post">
-            <button onclick="hideBlogPost(9)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Insurance Value in Rare Diseases: The DMD Case Study</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">The American Journal of Managed Care, 2024 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">With devastating conditions like Duchenne muscular dystrophy (DMD), patients would pay almost anything to avoid the disease. This willingness to pay for protection, known as "insurance value," is typically ignored in cost-effectiveness analysis. Our research quantifies this missing piece.</p>
-                <p style="margin-bottom: 1.5rem;">Insurance value reflects that people are risk-averse. Given the choice between a certain moderate loss and a small probability of catastrophic loss, most people prefer the certain moderate loss. For rare diseases, the "premium" people would pay to avoid the risk represents real value.</p>
-                <p style="margin-bottom: 1.5rem;">For DMD, a progressive disorder leading to loss of ambulation and early death, we found substantial insurance value. Families facing a DMD diagnosis would have paid significant amounts to have avoided that risk.</p>
-                <p style="margin-bottom: 1.5rem;">Incorporating insurance value could substantially change the calculus for rare disease treatments, potentially supporting broader access.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>People value protection against catastrophic health losses beyond expected costs</li>
-                        <li>DMD represents a devastating diagnosis with progressive decline and early death</li>
-                        <li>Traditional cost-effectiveness analysis misses the value of reducing catastrophic risk</li>
-                        <li>Including insurance value could improve coverage decisions for rare disease treatments</li>
-                    </ul>
-                </div>
-                <p><strong>Read the full paper:</strong> <a href="https://www.ajmc.com/view/quantifying-the-insurance-value-for-rare-diseases-duchenne-muscular-dystrophy" target="_blank" style="color: var(--color-accent);">AJMC</a></p>
-            </div>
-        </div>
-
-        <div id="blog-post-10" class="blog-full-post">
-            <button onclick="hideBlogPost(10)" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 0.9rem; margin-bottom: 2rem;">← Back to all posts</button>
-            <span class="blog-category" style="color: #666; margin-bottom: 1rem;">Major Contribution</span>
-            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Mitigating the IRA's Impact on Drug Innovation</h2>
-            <p style="color: var(--color-text-muted); margin-bottom: 2rem;">USC Schaeffer Center White Paper Series, 2023 • 4 min read</p>
-            <div style="line-height: 1.9;">
-                <p style="margin-bottom: 1.5rem;">The Inflation Reduction Act gave Medicare power to negotiate drug prices, which is a worthy goal. But our white paper examines potential unintended consequences for pharmaceutical innovation and proposes modifications to balance cost control with innovation incentives.</p>
-                <p style="margin-bottom: 1.5rem;">The core concern: if negotiations substantially reduce expected returns, some drugs won't be developed. Different negotiation timelines for small molecules (9 years) vs. biologics (13 years) may shift R&D investment. Orphan drug exclusions create complex incentives around indication expansion.</p>
-                <p style="margin-bottom: 1.5rem;">We propose modifications that preserve savings while protecting innovation: adjusting timelines, refining price-setting, and creating incentives for high-value therapeutic areas.</p>
-                <p style="margin-bottom: 1.5rem;">The goal is constructive policy improvement, not wholesale rejection of Medicare negotiation.</p>
-                <div class="takeaway-box">
-                    <h4 class="takeaway-title">Key Takeaways</h4>
-                    <ul class="takeaway-list">
-                        <li>Different negotiation timelines for small molecules vs. biologics may distort R&D investment</li>
-                        <li>Orphan drug exclusions create complex incentives around indication expansion strategies</li>
-                        <li>Chronic disease drugs for elderly patients face disproportionate impact from negotiations</li>
-                        <li>Targeted policy modifications could preserve cost savings while protecting innovation incentives</li>
-                    </ul>
-                </div>
-                <p><strong>Read the full paper:</strong> <a href="https://schaeffer.usc.edu/research/mitigating-the-inflation-reduction-acts-potential-adverse-impacts-on-the-prescription-drug-market/" target="_blank" style="color: var(--color-accent);">USC Schaeffer Center</a></p>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -404,24 +100,38 @@
     </footer>
 
     <script>
-        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
-        function showBlogPost(id) { document.getElementById('blog-post-' + id).style.display = 'block'; document.querySelector('.blog-list').style.display = 'none'; }
-        function hideBlogPost(id) { document.getElementById('blog-post-' + id).style.display = 'none'; document.querySelector('.blog-list').style.display = 'flex'; }
+        function toggleMenu() { 
+            document.getElementById('navLinks').classList.toggle('active'); 
+        }
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('onclick')) return;
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                if (target) { 
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+                }
                 document.getElementById('navLinks').classList.remove('active');
             });
         });
+        
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-links a');
             let current = '';
-            sections.forEach(section => { if (window.scrollY >= section.offsetTop - 100) { current = section.getAttribute('id'); } });
-            navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); } });
+            sections.forEach(section => { 
+                if (window.scrollY >= section.offsetTop - 100) { 
+                    current = section.getAttribute('id'); 
+                } 
+            });
+            navLinks.forEach(link => { 
+                link.classList.remove('active'); 
+                if (link.getAttribute('href') === 'index.html#' + current || 
+                    (link.getAttribute('href') === 'index.html' && current === 'home')) { 
+                    link.classList.add('active'); 
+                } 
+            });
         });
     </script>
 </body>
