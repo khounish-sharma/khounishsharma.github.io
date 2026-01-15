@@ -458,7 +458,7 @@ section {
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    padding: 10rem;
+    padding: 4rem;
 }
 
 .pub-intro {
