@@ -189,17 +189,17 @@
 
         function resetAutoRotate() {
             clearInterval(autoRotate);
-            autoRotate = setInterval(nextSlide, 10000);
+            autoRotate = setInterval(nextSlide, 15000);
         }
 
         // Start auto-rotation
-        autoRotate = setInterval(nextSlide, 10000);
+        autoRotate = setInterval(nextSlide, 15000);
 
         // Pause on hover
         const carousel = document.querySelector('.highlight-carousel');
         carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
         carousel.addEventListener('mouseleave', () => {
-            autoRotate = setInterval(nextSlide, 10000);
+            autoRotate = setInterval(nextSlide, 15000);
         });
     </script>
 </body>
