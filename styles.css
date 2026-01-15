@@ -119,26 +119,26 @@ nav {
 
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
     margin-bottom: 1rem;
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--color-accent);
     margin-bottom: 1.25rem;
 }
 
 .hero-bio {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
     max-width: 500px;
     margin-bottom: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .hero-links {
@@ -230,8 +230,8 @@ section {
 
 .section-title {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 500;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
     position: relative;
     display: inline-block;
 }
@@ -415,9 +415,9 @@ section {
 
 .update-card-title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.35;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
     margin-bottom: 0.75rem;
     color: var(--color-text);
     transition: color 0.3s;
@@ -430,7 +430,7 @@ section {
 .update-card-description {
     font-size: 0.9rem;
     color: var(--color-text-muted);
-    line-height: 1.55;
+    line-height: 1.65;
     flex-grow: 1;
     margin-bottom: 1rem;
 }
@@ -510,9 +510,9 @@ section {
 
 .pub-title {
     font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.5;
     margin-bottom: 0.75rem;
 }
 
@@ -534,7 +534,8 @@ section {
 
 .pub-section-header {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin: 2.5rem 0 1.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--color-accent);
@@ -587,8 +588,8 @@ section {
 
 .blog-item-title {
     font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -621,10 +622,10 @@ section {
 
 .takeaway-title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--color-accent);
     margin-bottom: 1.25rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .takeaway-list {
@@ -927,7 +928,8 @@ footer {
 
 .footer-name {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
