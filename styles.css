@@ -103,9 +103,9 @@ nav {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 3rem;
-    align-items: center;
+    align-items: start;
     width: 100%;
 }
 
@@ -180,19 +180,19 @@ nav {
 .hero-image {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .hero-headshot {
     width: 100%;
-    max-width: 280px;
+    max-width: 380px;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
 .headshot-placeholder {
     width: 100%;
-    max-width: 280px;
+    max-width: 380px;
     aspect-ratio: 3/4;
     background-color: var(--color-accent);
     border-radius: 12px;
